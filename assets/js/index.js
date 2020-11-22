@@ -25,16 +25,6 @@
         } else {
             navBg.classList.add('shown');
         }
-
-        // menuItems.forEach(m => {
-        //     const id = m.getAttribute('href').split('#')[1];
-
-        //     if (isElementInViewport(document.getElementById(id))) {
-        //         m.classList.add('active');
-        //     } else {
-        //         m.classList.remove('active');
-        //     }
-        // })
     });
 
     icons.forEach(icon => {

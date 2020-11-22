@@ -973,3 +973,212 @@
 
     }
 }
+
+@media (max-width: 290px) {
+
+
+    .section {
+        .accordeon {
+            padding: 12px 34px;
+
+            .accordeon-header {
+                h3 {
+                    font-size: 16px !important;
+                }
+            }
+
+            .accordeon-content {
+                grid-template-columns: 1fr;
+                row-gap: 30px;
+            }
+        }
+
+        .container {
+            .content {
+                .section-header {
+                    .section-title {
+                        font-size: 20px !important;
+                        line-height: normal;
+                        letter-spacing: normal;
+                    }
+                }
+            }
+        }
+
+        &.variants {
+            .container {
+                .content {
+                    .section-header {
+                        .section-title {}
+                    }
+
+                    .variants-items {
+
+                        .variant {
+                            &.leader {
+                                transform: scale(1);
+                            }
+                        }
+                    }
+
+                    .learning-a2 {
+                        p {
+                            font-size: 18px;
+                        }
+                    }
+                }
+            }
+        }
+
+        &.plan {
+            .container {
+                .content {
+                    .section-header {
+                        .section-title {}
+                    }
+
+                    .plan-accordeons {
+                        .accordeon {
+                            .accordeon-header {
+                                h3 {
+                                    font-size: 15px;
+                                    letter-spacing: normal;
+                                }
+                            }
+
+                            .accordeon-content {
+                                grid-template-columns: 1fr;
+                                row-gap: 30px;
+
+                                .col {
+                                    .col-title {
+                                        font-size: 16px;
+                                    }
+
+                                    ul {
+                                        li {
+                                            font-size: 15px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .select-plan {
+                        grid-template-columns: 1fr;
+                        grid-template-rows: repeat(2, 1fr);
+                        row-gap: 30px;
+
+                        &-button {
+                            width: 100%;
+                            font-size: 17px;
+                            padding: 13px 20px;
+                        }
+                    }
+                }
+            }
+        }
+
+        &.teachers {
+            .container {
+                .content {
+                    .section-header {
+                        .section-title {}
+                    }
+
+                    .teachers-items {
+
+                        .teacher {
+
+                            .avatar {
+                                width: 200px;
+                                height: 200px;
+                            }
+
+                            .item-content {
+
+                                .title {
+                                    font-size: 16px;
+                                }
+
+                                .teacher-skills {
+                                    li {
+                                        font-size: 13px;
+                                    }
+                                }
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &.advantages {
+            .container {
+                .content {
+                    .section-header {}
+
+                    .advantage-items {
+
+                        .advantage-item {
+                            grid-template-columns: 1fr;
+                            row-gap: 20px;
+                            justify-items: center;
+
+                            .item-content {
+                                .title {
+                                    font-size: 19px !important;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &.success {
+            .container {
+                .content {
+                    .section-header {
+                        .section-title {
+                            font-size: 19px !important;
+                        }
+                    }
+
+                    .success-items {
+                        .success-item {
+                            padding-right: 18px;
+                            padding-left: 18px;
+
+                            .item-content {
+                                .title {
+                                    font-size: 19px;
+                                }
+
+                                .text-content {
+                                    font-size: 15px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &.youcan {
+            .container {
+                .content {
+                    .youcan-items {
+                        .youcan-item {
+                            grid-template-columns: 1fr;
+                            justify-items: center;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}
