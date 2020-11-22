@@ -1,0 +1,975 @@
+// main: style.less
+
+@media (max-width: 768px) {
+
+    .top-nav {
+        .nav-overlay {
+            overflow: auto;
+
+            &.opened {
+                padding: 20px 80px;
+                height: calc(100vh - 70px);
+            }
+
+            .top-menu {
+
+                li {
+                    &:not(:last-of-type) {
+                        //margin-right: 30px;
+                        margin-bottom: 20px;
+                    }
+
+                    .nav-link {
+                        font-size: 15px;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+
+    .container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .header {
+        .container {
+            .content {
+                .page-title {
+                    font-size: 44px;
+                    line-height: normal;
+                }
+
+                .page-desc {
+                    max-width: 566px;
+                    font-size: 18px;
+                    line-height: 20px;
+                    margin-bottom: 52px;
+                }
+
+                .buttons-group {
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    grid-template-rows: repeat(2, auto);
+                    justify-items: center;
+
+                    .button {
+                        margin-bottom: 25px;
+
+                        &:not(:last-of-type) {
+                            margin-right: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .accordeon {
+        .accordeon-header {
+            h3 {
+                font-size: 27px;
+            }
+        }
+
+        .accordeon-content {
+            grid-template-columns: 1fr;
+            row-gap: 30px;
+        }
+    }
+
+    .section {
+        .container {
+            .content {
+                .section-header {
+                    .section-title {
+                        font-size: 30px;
+                    }
+                }
+            }
+        }
+
+        &.about {
+            .container {
+                grid-template-columns: 1fr;
+
+                .about-image {
+                    top: 50px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+
+
+
+                .content {
+                    text-align: left;
+                    padding-top: 100px;
+
+                    .section-header {
+                        text-align: left;
+                        margin-bottom: 20px;
+
+                        .section-title {
+                            margin: 0;
+                        }
+                    }
+
+                    .target-items {
+                        justify-content: center;
+                        justify-items: center;
+                    }
+                }
+            }
+        }
+
+        &.success {
+            .container {
+                .content {
+                    .success-items {
+                        grid-template-columns: 1fr;
+
+                        .success-item {
+                            &:nth-of-type(1n) {
+                                grid-column: 1;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &.learning {
+            .container {
+                .content {
+                    .section-header {}
+
+                    .learning-items {
+                        .learning-item {
+                            width: 100%;
+
+                            &:nth-of-type(2n) {
+                                justify-self: start;
+
+                                &:not(:first-of-type) {
+
+                                    &:not(:last-of-type) {
+                                        .title {
+
+                                            &::before,
+                                            &::after {
+                                                left: 40%;
+                                                transform: translateX(-50%);
+
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &.teachers {
+            .container {
+                .content {
+                    .section-header {
+                        margin-bottom: 10px;
+
+                        .section-title {}
+                    }
+
+                    .teachers-items {
+                        justify-items: center;
+
+                        .teacher {
+                            max-width: 524px;
+                            grid-template-columns: 1fr;
+                            grid-template-rows: 311px 1fr;
+                            justify-items: center;
+                            row-gap: 37px;
+
+                            .item-content {
+                                text-align: center;
+
+                                .teacher-skills {
+                                    list-style-position: inside;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &.feedback {
+            .container {
+                .content {
+                    .section-header {
+                        .section-title {}
+                    }
+
+                    .feedback-slider {
+                        position: relative !important;
+
+                        .carousel {
+
+
+                            .carousel-control-prev,
+                            .carousel-control-next {
+                                position: absolute !important;
+                                top: initial;
+                                bottom: -46px !important;
+                            }
+
+                            .carousel-control-prev {
+                                left: 0;
+                            }
+
+                            .carousel-control-next {
+                                right: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &.plan {
+            .container {
+                .content {
+                    .section-header {
+                        .section-title {}
+                    }
+
+                    .plan-accordeons {
+                        .accordeon {
+                            .accordeon-content {
+                                grid-template-columns: 1fr;
+                                row-gap: 30px;
+                            }
+                        }
+                    }
+
+                    .select-plan {
+                        grid-template-columns: 1fr;
+                        grid-template-rows: repeat(2, 1fr);
+                        row-gap: 30px;
+
+                        &-button {
+                            width: 100%;
+                            font-size: 27px;
+                        }
+                    }
+                }
+            }
+        }
+
+        &.variants {
+            .container {
+                .content {
+                    .section-header {
+                        .section-title {}
+                    }
+
+                    .variant-buttons {
+                        grid-template-columns: 1fr;
+                        row-gap: 30px;
+                    }
+
+                    .variants-items {
+                        grid-template-columns: 1fr;
+                        justify-items: center;
+                        row-gap: 70px;
+                    }
+
+                    .learning-a2 {
+                        .buttons-group {
+                            display: grid;
+                            grid-template-columns: 1fr;
+                            justify-items: center;
+                            row-gap: 30px;
+
+                            .button {
+                                width: 80%;
+
+                                &:not(:last-of-type) {
+                                    margin-right: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &.advantages {
+            .container {
+                .content {
+                    .section-header {
+                        .section-title {
+                            font-size: 30px;
+                        }
+                    }
+
+                    .advantage-items {
+                        grid-template-columns: 1fr;
+                    }
+                }
+            }
+        }
+
+        &.youcan {
+            .container {
+                .content {
+                    .section-header {
+                        .section-title {
+                            font-size: 30px;
+                        }
+                    }
+
+                    .youcan-items {
+                        grid-template-columns: 1fr;
+                    }
+                }
+            }
+        }
+    }
+
+    footer.footer {
+        .container {
+            grid-template-columns: 1fr;
+            row-gap: 60px;
+
+            .footer-logo {
+                justify-self: center;
+            }
+        }
+    }
+}
+
+@media(max-width: 572px) {
+    .section {
+        &.about {
+            .container {
+                grid-template-columns: 1fr;
+
+                .about-image {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+        }
+
+        &.consultation {
+            .container {
+                .content {
+                    .center-button {
+                        .button {
+                            font-size: 15px;
+                            padding: 13px 30px;
+                            display: block;
+                            border-radius: 35px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 522px) {
+
+
+
+    .section {
+        .accordeon {
+            padding: 12px 44px;
+
+            .accordeon-header {
+                h3 {
+                    font-size: 18px !important;
+                }
+            }
+
+            .accordeon-content {
+                grid-template-columns: 1fr;
+                row-gap: 30px;
+            }
+        }
+
+        .container {
+            .content {
+                .section-header {
+                    .section-title {
+                        font-size: 26px;
+                    }
+                }
+            }
+        }
+
+        &.about {
+            .container {
+                grid-template-columns: 1fr;
+
+                .about-image {
+                    width: 100%;
+                    height: 726px;
+                }
+
+                .section-header {
+                    text-align: center;
+                }
+
+                .content {
+                    text-align: center;
+
+                    .target-items {
+                        justify-content: center;
+                        justify-items: center;
+                    }
+                }
+            }
+        }
+
+        &.variants {
+            .container {
+                .content {
+                    .section-header {
+                        .section-title {}
+                    }
+
+                    .variant-buttons {
+                        grid-template-columns: 1fr;
+                        row-gap: 30px;
+                    }
+
+                    .variants-items {
+                        grid-template-columns: 1fr;
+                        justify-items: center;
+                        row-gap: 70px;
+
+                        .variant {
+                            width: 100%;
+
+                            .footer {
+                                .button {
+                                    width: 100%;
+                                    text-align: center;
+                                    border-radius: 36px;
+                                    font-size: 15px;
+                                    padding: 13px 20px;
+                                }
+                            }
+                        }
+                    }
+
+                    .learning-a2 {
+                        .buttons-group {
+                            display: grid;
+                            grid-template-columns: 1fr;
+                            justify-items: center;
+                            row-gap: 30px;
+
+                            .button {
+                                width: 80%;
+                                font-size: 16px;
+                                border-radius: 36px;
+
+                                &:not(:last-of-type) {
+                                    margin-right: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    footer.footer {
+        .container {
+            .menu-grid {
+                grid-template-columns: 200px;
+                justify-items: center;
+                justify-content: center;
+                row-gap: 115px;
+            }
+        }
+    }
+}
+
+@media (max-width: 425px) {
+
+    .top-nav {
+        .nav-container {
+            .logo {
+                justify-self: start;
+            }
+        }
+    }
+
+    .header {
+        .container {
+            .content {
+                .page-title {
+                    font-size: 30px;
+                }
+
+                .buttons-group {
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    grid-template-rows: repeat(2, auto);
+                    justify-items: center;
+
+                    .button {
+                        font-size: 15px;
+                        padding: 13px 30px;
+
+                        &:not(:last-of-type) {
+                            margin-right: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .accordeon {
+        padding: 12px 33px;
+
+        .accordeon-header {
+            grid-template-columns: auto auto;
+            justify-content: space-between;
+            position: relative;
+
+            h3 {
+                font-size: 14px !important;
+            }
+
+            .accordeon-icon {
+                position: absolute;
+                right: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 20px;
+                height: 20px;
+            }
+        }
+
+        .accordeon-content {
+            grid-template-columns: 1fr;
+            row-gap: 30px;
+        }
+    }
+
+    .section {
+        .container {
+            .content {
+                .section-header {
+                    .section-title {
+                        font-size: 30px !important;
+                    }
+                }
+            }
+        }
+
+
+
+        &.about {
+            .container {
+                grid-template-columns: 1fr;
+
+                .about-image {
+                    width: 100%;
+                    height: auto;
+                    border-radius: 30px;
+                    position: relative;
+                }
+
+                .content {
+                    padding-top: 80px;
+                }
+            }
+        }
+
+        &.variants {
+            .container {
+                .content {
+                    .section-header {
+                        .section-title {}
+                    }
+
+                    .variant-buttons {
+                        grid-template-columns: 1fr;
+                        row-gap: 30px;
+                    }
+
+                    .variants-items {
+                        grid-template-columns: 1fr;
+                        justify-items: center;
+                        row-gap: 70px;
+
+                        .variant {
+                            width: 100%;
+                        }
+                    }
+
+                    .learning-a2 {
+                        .buttons-group {
+                            display: grid;
+                            grid-template-columns: 1fr;
+                            justify-items: center;
+                            row-gap: 30px;
+
+                            .button {
+                                width: 80%;
+
+                                &:not(:last-of-type) {
+                                    margin-right: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &.teachers {
+            .container {
+                .content {
+                    .section-header {
+                        .section-title {}
+                    }
+
+                    .teachers-items {
+                        justify-items: center;
+
+                        .teacher {
+                            max-width: 100%;
+
+                            .avatar {
+                                width: 250px;
+                                height: 250px;
+                            }
+
+                            .item-content {
+                                text-align: center;
+
+                                .title {
+                                    font-size: 26px;
+                                }
+
+                                .teacher-skills {
+                                    li {
+                                        font-size: 15px;
+                                    }
+                                }
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &.advantages {
+            .container {
+                .content {
+                    .section-header {}
+
+                    .advantage-items {
+
+                        .item-content {
+                            .title {
+                                font-size: 19px !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &.learning {
+            .container {
+                .content {
+                    .section-header {}
+
+                    .learning-items {
+                        .learning-item {
+                            grid-template-columns: 1fr;
+                            justify-items: center;
+                            text-align: center;
+
+                            &:nth-of-type(2n) {
+                                &:not(:first-of-type) {
+                                    &:not(:last-of-type) {
+                                        .title {
+
+                                            &::before,
+                                            &::after {
+                                                display: none;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &.plan {
+            .container {
+                .content {
+                    .section-header {
+                        .section-title {}
+                    }
+
+                    .plan-accordeons {
+                        .accordeon {
+                            padding: 13px 29px;
+
+                            .accordeon-header {
+                                h3 {
+                                    font-size: 19px;
+                                }
+
+                                .accordeon-icon {
+                                    width: 28px;
+                                    height: 28px;
+                                }
+                            }
+
+                            .accordeon-content {
+                                .label {
+                                    font-size: 170px;
+                                    right: 0;
+                                }
+
+                                grid-template-columns: 1fr;
+                                row-gap: 30px;
+                            }
+                        }
+                    }
+
+                    .select-plan {
+                        grid-template-columns: 1fr;
+                        grid-template-rows: repeat(2, 1fr);
+                        row-gap: 30px;
+
+                        &-button {
+                            width: 100%;
+                            font-size: 17px;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+@media (max-width: 320px) {
+
+
+    .section {
+        .accordeon {
+            padding: 12px 44px;
+
+            .accordeon-header {
+                h3 {
+                    font-size: 16px !important;
+                }
+            }
+
+            .accordeon-content {
+                grid-template-columns: 1fr;
+                row-gap: 30px;
+            }
+        }
+
+        .container {
+            .content {
+                .section-header {
+                    .section-title {
+                        font-size: 25px !important;
+                    }
+                }
+            }
+        }
+
+        &.about {}
+
+        &.plan {
+            .container {
+                .content {
+                    .section-header {
+                        .section-title {}
+                    }
+
+                    .plan-accordeons {
+                        .accordeon {
+                            .accordeon-content {
+                                .label {
+                                    font-size: 100px;
+                                    right: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &.variants {
+            .container {
+                .content {
+                    .section-header {
+                        .section-title {}
+                    }
+
+                    .variant-buttons {
+                        grid-template-columns: 1fr;
+                        row-gap: 30px;
+                    }
+
+                    .variants-items {
+                        grid-template-columns: 1fr;
+                        justify-items: center;
+                        row-gap: 70px;
+
+                        .variant {
+                            width: 100%;
+                        }
+                    }
+
+                    .learning-a2 {
+                        .buttons-group {
+                            display: grid;
+                            grid-template-columns: 1fr;
+                            justify-items: center;
+                            row-gap: 30px;
+
+                            .button {
+                                width: 80%;
+
+                                &:not(:last-of-type) {
+                                    margin-right: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &.teachers {
+            .container {
+                .content {
+                    .section-header {
+                        .section-title {}
+                    }
+
+                    .teachers-items {
+                        justify-items: center;
+
+                        .teacher {
+                            max-width: 100%;
+
+                            .avatar {
+                                width: 250px;
+                                height: 250px;
+                            }
+
+                            .item-content {
+                                text-align: center;
+
+                                .title {
+                                    font-size: 26px;
+                                }
+
+                                .teacher-skills {
+                                    li {
+                                        font-size: 15px;
+                                    }
+                                }
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &.advantages {
+            .container {
+                .content {
+                    .section-header {}
+
+                    .advantage-items {
+
+                        .advantage-item {
+                            grid-template-columns: 1fr;
+                            row-gap: 20px;
+                            justify-items: center;
+
+                            .item-content {
+                                .title {
+                                    font-size: 19px !important;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &.success {
+            .container {
+                .content {
+                    .success-items {
+                        .success-item {
+                            padding-right: 18px;
+                            padding-left: 18px;
+                        }
+                    }
+                }
+            }
+        }
+
+        &.learning {
+            .container {
+                .content {
+                    .section-header {}
+
+                    .learning-items {
+                        .learning-item {
+                            grid-template-columns: 1fr;
+                            justify-items: center;
+                            text-align: center;
+
+                            &:nth-of-type(2n) {
+                                &:not(:first-of-type) {
+                                    &:not(:last-of-type) {
+                                        .title {
+
+                                            &::before,
+                                            &::after {
+                                                display: none;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}

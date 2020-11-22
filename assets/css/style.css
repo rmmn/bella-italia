@@ -156,12 +156,53 @@ a {
 .top-nav .nav-container .menu.open span::after {
   transform: rotateZ(-45deg);
 }
+.top-nav .nav-overlay {
+  overflow: hidden;
+  height: 0;
+  background-color: #fff;
+  transition: all linear 0.3s;
+  box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.25);
+  top: -1px;
+  position: relative;
+}
+.top-nav .nav-overlay.opened {
+  padding: 50px 100px;
+  height: auto;
+  overflow: auto;
+}
+.top-nav .nav-overlay .top-menu {
+  display: flex;
+  flex-flow: column wrap;
+  list-style: none;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+.top-nav .nav-overlay .top-menu li:not(:last-of-type) {
+  margin-bottom: 20px;
+}
+.top-nav .nav-overlay .top-menu li .nav-link {
+  font-weight: bold;
+  font-size: 20px;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: #4F4F56;
+  border-bottom: 4px solid #fff;
+  padding: 0;
+}
+.top-nav .nav-overlay .top-menu li .nav-link:hover,
+.top-nav .nav-overlay .top-menu li .nav-link.active {
+  border-bottom-color: #4f4f4f;
+}
 .header {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   background: no-repeat center center;
   background-size: cover;
   position: relative;
+  display: grid;
+  grid-template-rows: 0.5fr 1fr 0.5fr;
+  align-items: center;
 }
 .header .overlay {
   position: absolute;
@@ -172,16 +213,12 @@ a {
   background-color: rgba(255, 255, 255, 0.5);
   z-index: 0;
 }
-.header .overlay .container {
-  height: 100%;
+.header .container {
   z-index: 1;
-  display: grid;
-  grid-template-rows: repeat(3, 1fr);
-}
-.header .overlay .container .content {
+  align-self: center;
   grid-row: 2;
 }
-.header .overlay .container .content .page-title {
+.header .container .content .page-title {
   max-width: 848px;
   font-weight: bold;
   font-size: 64px;
@@ -189,16 +226,16 @@ a {
   color: #4F4F56;
   margin-bottom: 32px;
 }
-.header .overlay .container .content .page-desc {
+.header .container .content .page-desc {
   max-width: 566px;
   font-size: 18px;
   line-height: 20px;
   margin-bottom: 52px;
 }
-.header .overlay .container .content .buttons-group {
+.header .container .content .buttons-group {
   display: flex;
 }
-.header .overlay .container .content .buttons-group .button:not(:last-of-type) {
+.header .container .content .buttons-group .button:not(:last-of-type) {
   margin-right: 45px;
 }
 .center-button {
@@ -261,7 +298,7 @@ a {
 .accordeon .accordeon-content {
   height: 0;
   overflow: hidden;
-  transition: all linear 0.3;
+  transition: all linear 0.3s;
   position: relative;
 }
 .accordeon .accordeon-content .label {
@@ -1088,5 +1125,494 @@ footer.footer .copy p {
   font-size: 18px;
   text-align: center;
   color: rgba(255, 255, 255, 0.55);
+}
+@media (max-width: 768px) {
+  .top-nav .nav-overlay {
+    overflow: auto;
+  }
+  .top-nav .nav-overlay.opened {
+    padding: 20px 80px;
+    height: calc(100vh - 70px);
+  }
+  .top-nav .nav-overlay .top-menu li:not(:last-of-type) {
+    margin-bottom: 20px;
+  }
+  .top-nav .nav-overlay .top-menu li .nav-link {
+    font-size: 15px;
+    text-align: center;
+  }
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .header .container .content .page-title {
+    font-size: 44px;
+    line-height: normal;
+  }
+  .header .container .content .page-desc {
+    max-width: 566px;
+    font-size: 18px;
+    line-height: 20px;
+    margin-bottom: 52px;
+  }
+  .header .container .content .buttons-group {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, auto);
+    justify-items: center;
+  }
+  .header .container .content .buttons-group .button {
+    margin-bottom: 25px;
+  }
+  .header .container .content .buttons-group .button:not(:last-of-type) {
+    margin-right: 0;
+  }
+  .accordeon .accordeon-header h3 {
+    font-size: 27px;
+  }
+  .accordeon .accordeon-content {
+    grid-template-columns: 1fr;
+    row-gap: 30px;
+  }
+  .section .container .content .section-header .section-title {
+    font-size: 30px;
+  }
+  .section.about .container {
+    grid-template-columns: 1fr;
+  }
+  .section.about .container .about-image {
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .section.about .container .content {
+    text-align: left;
+    padding-top: 100px;
+  }
+  .section.about .container .content .section-header {
+    text-align: left;
+    margin-bottom: 20px;
+  }
+  .section.about .container .content .section-header .section-title {
+    margin: 0;
+  }
+  .section.about .container .content .target-items {
+    justify-content: center;
+    justify-items: center;
+  }
+  .section.success .container .content .success-items {
+    grid-template-columns: 1fr;
+  }
+  .section.success .container .content .success-items .success-item:nth-of-type(1n) {
+    grid-column: 1;
+  }
+  .section.learning .container .content .learning-items .learning-item {
+    width: 100%;
+  }
+  .section.learning .container .content .learning-items .learning-item:nth-of-type(2n) {
+    justify-self: start;
+  }
+  .section.learning .container .content .learning-items .learning-item:nth-of-type(2n):not(:first-of-type):not(:last-of-type) .title::before,
+  .section.learning .container .content .learning-items .learning-item:nth-of-type(2n):not(:first-of-type):not(:last-of-type) .title::after {
+    left: 40%;
+    transform: translateX(-50%);
+  }
+  .section.teachers .container .content .section-header {
+    margin-bottom: 10px;
+  }
+  .section.teachers .container .content .teachers-items {
+    justify-items: center;
+  }
+  .section.teachers .container .content .teachers-items .teacher {
+    max-width: 524px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 311px 1fr;
+    justify-items: center;
+    row-gap: 37px;
+  }
+  .section.teachers .container .content .teachers-items .teacher .item-content {
+    text-align: center;
+  }
+  .section.teachers .container .content .teachers-items .teacher .item-content .teacher-skills {
+    list-style-position: inside;
+  }
+  .section.feedback .container .content .feedback-slider {
+    position: relative !important;
+  }
+  .section.feedback .container .content .feedback-slider .carousel .carousel-control-prev,
+  .section.feedback .container .content .feedback-slider .carousel .carousel-control-next {
+    position: absolute !important;
+    top: initial;
+    bottom: -46px !important;
+  }
+  .section.feedback .container .content .feedback-slider .carousel .carousel-control-prev {
+    left: 0;
+  }
+  .section.feedback .container .content .feedback-slider .carousel .carousel-control-next {
+    right: 0;
+  }
+  .section.plan .container .content .plan-accordeons .accordeon .accordeon-content {
+    grid-template-columns: 1fr;
+    row-gap: 30px;
+  }
+  .section.plan .container .content .select-plan {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    row-gap: 30px;
+  }
+  .section.plan .container .content .select-plan-button {
+    width: 100%;
+    font-size: 27px;
+  }
+  .section.variants .container .content .variant-buttons {
+    grid-template-columns: 1fr;
+    row-gap: 30px;
+  }
+  .section.variants .container .content .variants-items {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    row-gap: 70px;
+  }
+  .section.variants .container .content .learning-a2 .buttons-group {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    row-gap: 30px;
+  }
+  .section.variants .container .content .learning-a2 .buttons-group .button {
+    width: 80%;
+  }
+  .section.variants .container .content .learning-a2 .buttons-group .button:not(:last-of-type) {
+    margin-right: 0;
+  }
+  .section.advantages .container .content .section-header .section-title {
+    font-size: 30px;
+  }
+  .section.advantages .container .content .advantage-items {
+    grid-template-columns: 1fr;
+  }
+  .section.youcan .container .content .section-header .section-title {
+    font-size: 30px;
+  }
+  .section.youcan .container .content .youcan-items {
+    grid-template-columns: 1fr;
+  }
+  footer.footer .container {
+    grid-template-columns: 1fr;
+    row-gap: 60px;
+  }
+  footer.footer .container .footer-logo {
+    justify-self: center;
+  }
+}
+@media (max-width: 572px) {
+  .section.about .container {
+    grid-template-columns: 1fr;
+  }
+  .section.about .container .about-image {
+    width: 100%;
+    height: auto;
+  }
+  .section.consultation .container .content .center-button .button {
+    font-size: 15px;
+    padding: 13px 30px;
+    display: block;
+    border-radius: 35px;
+  }
+}
+@media (max-width: 522px) {
+  .section .accordeon {
+    padding: 12px 44px;
+  }
+  .section .accordeon .accordeon-header h3 {
+    font-size: 18px !important;
+  }
+  .section .accordeon .accordeon-content {
+    grid-template-columns: 1fr;
+    row-gap: 30px;
+  }
+  .section .container .content .section-header .section-title {
+    font-size: 26px;
+  }
+  .section.about .container {
+    grid-template-columns: 1fr;
+  }
+  .section.about .container .about-image {
+    width: 100%;
+    height: 726px;
+  }
+  .section.about .container .section-header {
+    text-align: center;
+  }
+  .section.about .container .content {
+    text-align: center;
+  }
+  .section.about .container .content .target-items {
+    justify-content: center;
+    justify-items: center;
+  }
+  .section.variants .container .content .variant-buttons {
+    grid-template-columns: 1fr;
+    row-gap: 30px;
+  }
+  .section.variants .container .content .variants-items {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    row-gap: 70px;
+  }
+  .section.variants .container .content .variants-items .variant {
+    width: 100%;
+  }
+  .section.variants .container .content .variants-items .variant .footer .button {
+    width: 100%;
+    text-align: center;
+    border-radius: 36px;
+    font-size: 15px;
+    padding: 13px 20px;
+  }
+  .section.variants .container .content .learning-a2 .buttons-group {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    row-gap: 30px;
+  }
+  .section.variants .container .content .learning-a2 .buttons-group .button {
+    width: 80%;
+    font-size: 16px;
+    border-radius: 36px;
+  }
+  .section.variants .container .content .learning-a2 .buttons-group .button:not(:last-of-type) {
+    margin-right: 0;
+  }
+  footer.footer .container .menu-grid {
+    grid-template-columns: 200px;
+    justify-items: center;
+    justify-content: center;
+    row-gap: 115px;
+  }
+}
+@media (max-width: 425px) {
+  .top-nav .nav-container .logo {
+    justify-self: start;
+  }
+  .header .container .content .page-title {
+    font-size: 30px;
+  }
+  .header .container .content .buttons-group {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, auto);
+    justify-items: center;
+  }
+  .header .container .content .buttons-group .button {
+    font-size: 15px;
+    padding: 13px 30px;
+  }
+  .header .container .content .buttons-group .button:not(:last-of-type) {
+    margin-right: 0;
+  }
+  .accordeon {
+    padding: 12px 33px;
+  }
+  .accordeon .accordeon-header {
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+    position: relative;
+  }
+  .accordeon .accordeon-header h3 {
+    font-size: 14px !important;
+  }
+  .accordeon .accordeon-header .accordeon-icon {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+  }
+  .accordeon .accordeon-content {
+    grid-template-columns: 1fr;
+    row-gap: 30px;
+  }
+  .section .container .content .section-header .section-title {
+    font-size: 30px !important;
+  }
+  .section.about .container {
+    grid-template-columns: 1fr;
+  }
+  .section.about .container .about-image {
+    width: 100%;
+    height: auto;
+    border-radius: 30px;
+    position: relative;
+  }
+  .section.about .container .content {
+    padding-top: 80px;
+  }
+  .section.variants .container .content .variant-buttons {
+    grid-template-columns: 1fr;
+    row-gap: 30px;
+  }
+  .section.variants .container .content .variants-items {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    row-gap: 70px;
+  }
+  .section.variants .container .content .variants-items .variant {
+    width: 100%;
+  }
+  .section.variants .container .content .learning-a2 .buttons-group {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    row-gap: 30px;
+  }
+  .section.variants .container .content .learning-a2 .buttons-group .button {
+    width: 80%;
+  }
+  .section.variants .container .content .learning-a2 .buttons-group .button:not(:last-of-type) {
+    margin-right: 0;
+  }
+  .section.teachers .container .content .teachers-items {
+    justify-items: center;
+  }
+  .section.teachers .container .content .teachers-items .teacher {
+    max-width: 100%;
+  }
+  .section.teachers .container .content .teachers-items .teacher .avatar {
+    width: 250px;
+    height: 250px;
+  }
+  .section.teachers .container .content .teachers-items .teacher .item-content {
+    text-align: center;
+  }
+  .section.teachers .container .content .teachers-items .teacher .item-content .title {
+    font-size: 26px;
+  }
+  .section.teachers .container .content .teachers-items .teacher .item-content .teacher-skills li {
+    font-size: 15px;
+  }
+  .section.advantages .container .content .advantage-items .item-content .title {
+    font-size: 19px !important;
+  }
+  .section.learning .container .content .learning-items .learning-item {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+  }
+  .section.learning .container .content .learning-items .learning-item:nth-of-type(2n):not(:first-of-type):not(:last-of-type) .title::before,
+  .section.learning .container .content .learning-items .learning-item:nth-of-type(2n):not(:first-of-type):not(:last-of-type) .title::after {
+    display: none;
+  }
+  .section.plan .container .content .plan-accordeons .accordeon {
+    padding: 13px 29px;
+  }
+  .section.plan .container .content .plan-accordeons .accordeon .accordeon-header h3 {
+    font-size: 19px;
+  }
+  .section.plan .container .content .plan-accordeons .accordeon .accordeon-header .accordeon-icon {
+    width: 28px;
+    height: 28px;
+  }
+  .section.plan .container .content .plan-accordeons .accordeon .accordeon-content {
+    grid-template-columns: 1fr;
+    row-gap: 30px;
+  }
+  .section.plan .container .content .plan-accordeons .accordeon .accordeon-content .label {
+    font-size: 170px;
+    right: 0;
+  }
+  .section.plan .container .content .select-plan {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    row-gap: 30px;
+  }
+  .section.plan .container .content .select-plan-button {
+    width: 100%;
+    font-size: 17px;
+  }
+}
+@media (max-width: 320px) {
+  .section .accordeon {
+    padding: 12px 44px;
+  }
+  .section .accordeon .accordeon-header h3 {
+    font-size: 16px !important;
+  }
+  .section .accordeon .accordeon-content {
+    grid-template-columns: 1fr;
+    row-gap: 30px;
+  }
+  .section .container .content .section-header .section-title {
+    font-size: 25px !important;
+  }
+  .section.plan .container .content .plan-accordeons .accordeon .accordeon-content .label {
+    font-size: 100px;
+    right: 0;
+  }
+  .section.variants .container .content .variant-buttons {
+    grid-template-columns: 1fr;
+    row-gap: 30px;
+  }
+  .section.variants .container .content .variants-items {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    row-gap: 70px;
+  }
+  .section.variants .container .content .variants-items .variant {
+    width: 100%;
+  }
+  .section.variants .container .content .learning-a2 .buttons-group {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    row-gap: 30px;
+  }
+  .section.variants .container .content .learning-a2 .buttons-group .button {
+    width: 80%;
+  }
+  .section.variants .container .content .learning-a2 .buttons-group .button:not(:last-of-type) {
+    margin-right: 0;
+  }
+  .section.teachers .container .content .teachers-items {
+    justify-items: center;
+  }
+  .section.teachers .container .content .teachers-items .teacher {
+    max-width: 100%;
+  }
+  .section.teachers .container .content .teachers-items .teacher .avatar {
+    width: 250px;
+    height: 250px;
+  }
+  .section.teachers .container .content .teachers-items .teacher .item-content {
+    text-align: center;
+  }
+  .section.teachers .container .content .teachers-items .teacher .item-content .title {
+    font-size: 26px;
+  }
+  .section.teachers .container .content .teachers-items .teacher .item-content .teacher-skills li {
+    font-size: 15px;
+  }
+  .section.advantages .container .content .advantage-items .advantage-item {
+    grid-template-columns: 1fr;
+    row-gap: 20px;
+    justify-items: center;
+  }
+  .section.advantages .container .content .advantage-items .advantage-item .item-content .title {
+    font-size: 19px !important;
+  }
+  .section.success .container .content .success-items .success-item {
+    padding-right: 18px;
+    padding-left: 18px;
+  }
+  .section.learning .container .content .learning-items .learning-item {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+  }
+  .section.learning .container .content .learning-items .learning-item:nth-of-type(2n):not(:first-of-type):not(:last-of-type) .title::before,
+  .section.learning .container .content .learning-items .learning-item:nth-of-type(2n):not(:first-of-type):not(:last-of-type) .title::after {
+    display: none;
+  }
 }
 /*# sourceMappingURL=./style.css.map */
